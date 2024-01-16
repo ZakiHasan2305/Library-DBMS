@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personalized Recommendations</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Personalized Recommendations</h1>
+    <ul>
+        {% for book in recommendations %}
+            <li>{{ book.1 }} - {{ book.4 }} - ${{ book.5 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

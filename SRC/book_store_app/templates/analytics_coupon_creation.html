@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Last Three Coupons</title>
+</head>
+<body>
+
+<h1>Last Three Coupons</h1>
+
+{% if last_three %}
+    <ul>
+        {% for coupon in last_three %}
+            <li>
+                <strong>Coupon ID:</strong> {{ coupon.0 }}<br>
+                <strong>Title:</strong> {{ coupon.1 }}<br>
+                <strong>Discount Percent:</strong> {{ coupon.2 }}<br>
+                <strong>Genre:</strong> {{ coupon.3 }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No coupons available.</p>
+{% endif %}
+
+</body>
+</html>

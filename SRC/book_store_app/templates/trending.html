@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trending Books</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <h1>Trending Books {{ time_period }}</h1>
+    <ul>
+        {% for book in trending_books %}
+            <li>{{ book.1 }} - {{ book.4 }} - ${{ book.5 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

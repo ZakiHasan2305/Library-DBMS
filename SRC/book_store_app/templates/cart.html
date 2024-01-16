@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addToCart() {
+            var bookId = document.getElementById("bookid_field").value;
+
+            if (bookId.trim() !== "") {
+                var form = document.getElementById("cartForm");
+                form.action = '{% url "addToCart" %}';
+                form.innerHTML += '<input type="hidden" name="bookid_field" value="' + bookId + '">';
+                form.submit();
+            } else {
+                alert("Please enter a valid Book ID.");
+            }
+        }
+        function remFromCart(bookId) {
+            var form = document.getElementById("cartForm");
+
+            form.action = '{% url "remFromCart" %}';
+            form.innerHTML += '<input type="hidden" name="bookid_field" value="' + bookId + '">';
+            form.submit();
+        }
+    </script>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <h1>Cart</h1>
+    <form id="cartForm" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="bookid">Input Book Ids</label>
+            <input type="text" class="form-control" id="bookid_field" name="bookid_field" placeholder="Enter Book Ids">
+            <button class="form-control" id="addtocart" name="addtocart" onclick="addToCart()">Add To Cart</button>
+        </div>
+        {% if carts %}
+        <h1>Order Information</h1>
+        <ul>
+            {% for cart in carts %}
+            <p><strong>Title: {{ cart.title }}</strong></p>
+            <p id="book_id_field">Book ID: {{ cart.book_id }}</p>
+            <p>Price: ${{ cart.price }}</p>
+            <br />
+            <button data-bookid="{{ cart_item.book_id }}" class="form-control remfromcart"
+                onclick="remFromCart('{{cart_item.book_id}}')">Remove From Cart</button>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No books found.</p>
+        {% endif %}
+    </form>
+    <script>
+
+    </script>
+</body>
