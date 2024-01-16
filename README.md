@@ -1,14 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/fv2McSSv)
 
-# SE3309_Assignment3_2022
+# Library DBMS Application
 
-This repo will contain the data source for your project and the sql files for each questions.
+Created and implemented a MySQL library database, seamlessly integrating it with a dynamic web interface developed using Django. Crafted comprehensive diagrams, including Entity-Relationship (ER) and class diagrams, to ensure efficient database creation and management.
 
-The SRC folder should have the data files you used as well as any script you used to load the data within the database and any code used to generate the data. If you used excel spreadsheets, include these as well.
+Demonstrated expertise in delivering complex features, encompassing secure login functionality, intuitive catalog searching, and personalized user recommendations based on purchasing history. Implemented an intuitive cart system, enabling users to seamlessly order books, while also incorporating a trending books section to enhance user engagement.
 
-The SQL Folder should include all the required SQL files for each of the questions.
-
-The DUMP folder should contain an exported copy of your database.
+The DUMP folder contains an exported copy of the database.
 
 # TO RUN THE CODE
 
